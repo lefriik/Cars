@@ -7,6 +7,9 @@ def index(request):
     cars = Car.objects.all() 
 
     return render(request, 'cars_catalog/car_list.html', {'car_list' : cars})
+
+def nada(request):
+    return render(request, 'cars_catalog/nada.html')
     
 
 
