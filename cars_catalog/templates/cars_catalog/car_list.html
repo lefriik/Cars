@@ -43,7 +43,7 @@
             </tr>
           </thead>
 
-          <tbody class="text-sm divide-y divide-gray-100">
+          <tbody class="text-sm divide-y divide-gray-100 p-5">
    
             {% for car in car_list %}
             <tr class="bg-gray-100">
@@ -51,24 +51,24 @@
                 <div class="font-medium text-gray-800">{{ car.id }}</div>
               </td>
               <td class="p-2">
-                <div class="font-medium text-gray-800">{{ car.plate }}</div>
+                <div class=" text-gray-800">{{ car.plate }}</div>
               </td>
               <td class="p-2">
-                <div class="text-left">{{ car.brand }}</div>
+                <div class="font-medium text-left text-gray-800">{{ car.brand|upper }}</div>
               </td>
               <td class="p-2">
-                <div class="font-medium text-gray-800">{{ car.color }}</div>
+                <div class=" text-gray-800">{{ car.color|capfirst }}</div>
               </td>
               <td class="p-2 flex">
                 <a href="{% url 'car_detail' pk=car.id %}">
-                  <button class="py-2 px-4 shadow-md no-underline rounded-full bg-green-500 text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-blue-200 focus:outline-none active:shadow-none mr-2">detalles</button>
+                  <button class="py-2 px-4 shadow-md no-underline rounded-md bg-teal-400 text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-blue-200 focus:outline-none active:shadow-none mr-2">Detalles</button>
                 </a>
                 <a href="">
-                  <button class="py-2 px-4 shadow-md no-underline rounded-full bg-orange-400 text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-purple-200 focus:outline-none active:shadow-none mr-2">editar</button>
+                  <button class="py-2 px-4 shadow-md no-underline rounded-md bg-orange-500 text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-purple-200 focus:outline-none active:shadow-none mr-2">Editar</button>
                 </a>
                 <form method="post" action="">
                   {% csrf_token %}
-                  <button type="submit"  value="Delete" class="py-2 px-4 shadow-md no-underline rounded-full bg-red-500 text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-zinc-200 focus:outline-none active:shadow-none mr-2">eliminar</button>
+                  <button type="submit"  value="Delete" class="py-2 px-4 shadow-md no-underline rounded-md bg-red-600 text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-zinc-200 focus:outline-none active:shadow-none mr-2">Eliminar</button>
                 </form>
               </td>
 
@@ -88,7 +88,7 @@
             {% endfor %}
           </tbody>
         </table>
-        <div class="w-full my-8 select-none flex">
+        <div class="w-full mt-3 select-none flex">
           <a class="w-full" href="#">
             <button class="w-full py-2 px-4 shadow-md no-underline rounded-md bg-black text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-neutral-800 focus:outline-none active:shadow-none mr-2">+Agregar</button>
           </a>
