@@ -1,4 +1,7 @@
-{% extends '../layout/base.html' %} {% block content %}
+{% extends '../layout/base.html' %} 
+{% load static %}
+
+{% block content %}
 <section
   class="antialiased bg-gray-100 text-gray-600 h-screen px-4"
   x-data="app"
@@ -72,6 +75,15 @@
                   <button type="submit"  value="Delete" class="py-2 px-4 shadow-md no-underline rounded-full bg-red-500 text-white font-sans font-semibold text-sm border-blue btn-primary hover:text-white hover:bg-zinc-200 focus:outline-none active:shadow-none mr-2">eliminar</button>
                 </form>
               </td>
+
+              {% if car.imagen != 'null' and car.imagen.url|length >= 1 %}
+                <td>
+                  <div>
+
+                    <img class="rounded" src="{{car.imagen.url}}" alt="imagen auto">
+                  </div>
+                </td>
+              {% endif %}
             </tr>
             {% empty %}
             <tr>
